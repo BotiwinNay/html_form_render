@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  padding: 20px;
+  color: #111;
+  font: 14px Arial, sans-serif;
+}
+
+form {
+  box-sizing: border-box;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px;
+  background: #fff;
+}
+
+fieldset {
+  margin: 0 0 6px;
+  padding: 8px 11px 16px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+
+legend {
+  padding: 0 3px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  align-items: start;
+  gap: 7px;
+  margin: 0 0 6px;
+}
+
+label {
+  padding-top: 4px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select {
+  box-sizing: border-box;
+  width: 193px;
+  height: 27px;
+}
+
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100px;
+  resize: both;
+}
+
+.options {
+  padding-top: 3px;
+}
+
+.options label {
+  padding: 0;
+}
+
+button {
+  display: block;
+  margin: 14px 0 0 auto;
+  padding: 7px 10px;
+  color: #fff;
+  background: blue;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font: inherit;
+  cursor: pointer;
+}
