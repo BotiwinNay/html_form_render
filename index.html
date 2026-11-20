@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Form</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      color: #111;
+      font: 14px Arial, sans-serif;
+    }
+
+    form {
+      box-sizing: border-box;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 28px;
+      background: #fff;
+    }
+
+    fieldset {
+      margin: 0 0 6px;
+      padding: 8px 11px 16px;
+      border: 1px solid #bbb;
+      border-radius: 6px;
+    }
+
+    legend {
+      padding: 0 3px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      align-items: start;
+      gap: 7px;
+      margin: 0 0 6px;
+    }
+
+    label {
+      padding-top: 4px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    select {
+      box-sizing: border-box;
+      width: 193px;
+      height: 27px;
+    }
+
+    textarea {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100px;
+      resize: both;
+    }
+
+    .options {
+      padding-top: 3px;
+    }
+
+    .options label {
+      padding: 0;
+    }
+
+    button {
+      display: block;
+      margin: 14px 0 0 auto;
+      padding: 7px 10px;
+      color: #fff;
+      background: blue;
+      border: 1px solid #333;
+      border-radius: 6px;
+      font: inherit;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <form
+    action="https://teach-backend-fawn.vercel.app/api/product"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+    <fieldset>
+      <legend>General Info</legend>
+
+      <div class="row">
+        <label for="itemName">Item Name</label>
+        <input id="itemName" name="itemName" type="text" value="Notebook">
+      </div>
+
+      <div class="row">
+        <label for="description">Description</label>
+        <textarea id="description" name="description">A lined notebook.</textarea>
+      </div>
+
+      <div class="row">
+        <label for="category">Category</label>
+        <select id="category" name="category">
+          <option value="notSpecified" selected>notSpecified</option>
+          <option value="stationery">stationery</option>
+          <option value="electronics">electronics</option>
+        </select>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Misc.</legend>
+
+      <div class="row">
+        <label for="inventoryAmount">Inventory Amount</label>
+        <input id="inventoryAmount" name="inventoryAmount" type="number" value="25">
+      </div>
+
+      <div class="row">
+        <label for="listPrice">List price</label>
+        <input id="listPrice" name="listPrice" type="number" step="0.01" value="10.00">
+      </div>
+
+      <div class="row">
+        <span>Available Stores</span>
+        <div class="options">
+          <label><input type="checkbox" name="availableStores" value="Bangkok" checked>Bangkok</label>
+          <label><input type="checkbox" name="availableStores" value="Pattaya">Pattaya</label>
+          <label><input type="checkbox" name="availableStores" value="Phuket">Phuket</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <span>Available Stores</span>
+        <div class="options">
+          <label><input type="radio" name="status" value="Active" checked>Active</label>
+          <label><input type="radio" name="status" value="Inactive">Inactive</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Staff</legend>
+
+      <div class="row">
+        <label for="staffEmail">Staff Email</label>
+        <input
+          id="staffEmail"
+          name="staffEmail"
+          type="email"
+          value="your-student-email@example.edu"
+          required
+        >
+      </div>
+    </fieldset>
+
+    <button type="submit">Submit Form</button>
+  </form>
+</body>
+</html>
